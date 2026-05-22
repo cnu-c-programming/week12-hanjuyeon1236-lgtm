@@ -18,7 +18,3 @@ int main(int argc, const char* argv[], const char* envp[]) {
     fclose(fp);
     return 0;
 }
-
-    return 0;
-}
-
