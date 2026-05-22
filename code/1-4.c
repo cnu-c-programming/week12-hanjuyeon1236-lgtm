@@ -8,6 +8,7 @@ void cat(const char* filename) {
   int c;
   while ((c = fgetsc(fp)) != )
     putchar(c);
+  
   fclose(fp);
 }
 
