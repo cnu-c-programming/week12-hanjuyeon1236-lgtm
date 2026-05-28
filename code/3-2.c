@@ -6,17 +6,17 @@ int main(int argc, const char* argv[]) {
         return 0;
     
     const char* filename = argv[1];
-    char buffer[10] = {0};
+    char buffer[256] = {0};
 
     FILE* fp = fopen(filename, "r");
     if(fp == NULL)
         return 0;
 
-    fscanf(fp, "%s", buffer);
+    if (fgets(buffer, sizeof(buffer), fp) != NULL) {
+    printf("%s", buffer);
+    }
+    
     fclose(fp);
-
-    printf("%s\n", buffer);
 
     return 0;
 }
-
