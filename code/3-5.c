@@ -9,8 +9,14 @@ int main(int argc, const char* argv[]) {
     }
 int sum = 0;
     int num;
-    while (fscanf(fp, "%d", &num) == 1) {
-        sum += num;
+    char buffer[256];
+
+    while (fscanf(fp, "%255s", buffer) == 1) {
+        if (sscanf(buffer, "%d", &num) == 1) {
+            sum += num;
+        } else {
+            fprintf(stderr, "%s\n", buffer);
+        }
     }
 
     printf("sum: %d\n", sum);
