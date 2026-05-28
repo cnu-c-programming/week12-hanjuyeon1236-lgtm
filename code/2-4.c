@@ -20,7 +20,7 @@ int main(int argc, const char* argv[]) {
             if (count[i] > 0) {
                 printf("%c: %d\n", 'a' + i, count[i]);
             }
-             fclose(fp);
         }
+       fclose(fp);
 }
 
