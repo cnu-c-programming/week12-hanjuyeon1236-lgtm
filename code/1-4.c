@@ -6,7 +6,7 @@ void cat(const char* filename) {
     return;
 
   int c;
-  while ((c = fgetsc(fp)) != EOF)
+  while ((c = fgetc(fp)) != EOF)
     putchar(c);
   
   fclose(fp);
