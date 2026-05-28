@@ -18,7 +18,7 @@ int main(int argc, const char* argv[]) {
         return 1;
     }
     char buf_fp2[256] = {0};
-    char* res_fp2 = fgets)buf_fp2, sizeof(buf_fp2), fp2);
+    char* res_fp2 = fgets(buf_fp2, sizeof(buf_fp2), fp2);
 
     printf("fp1 %s %p %d %d\n", buf_fp1, res_fp1, ferror(fp1), feof(fp1));
     printf("fp2 %s %p %d %d\n", buf_fp2, res_fp2, ferror(fp2), feof(fp2));
