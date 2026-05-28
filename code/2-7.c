@@ -13,6 +13,8 @@ void config_parser(Config* config_ptr) {
     FILE* fp = fopen("config.txt", "r");
     if (fp == NULL) return;
 
+    char line[128]; 
+
    while (fgets(line, sizeof(line), fp)) {
         if (strncmp(line, "InputFileName=", 14) == 0) {
             sscanf(line, "InputFileName=%s", config_ptr->InputFileName);
@@ -21,7 +23,7 @@ void config_parser(Config* config_ptr) {
         } else if (strncmp(line, "SectionName=", 12) == 0) {
             sscanf(line, "SectionName=%s", config_ptr->SectionName);
         } else if (strncmp(line, "Address=", 8) == 0) {
-            sscanf(line, "Address=%lli", &config_ptr->Address);
+            sscanf(line, "Address=0x%llx", &config_ptr->Address);
         }
     }
     
