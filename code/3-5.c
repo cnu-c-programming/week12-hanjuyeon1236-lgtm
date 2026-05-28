@@ -7,10 +7,11 @@ int main(int argc, const char* argv[]) {
     if (fp == NULL) {
         return 0;
     }
-
-
-    int sum = 0;
-
+int sum = 0;
+    int num;
+    while (fscanf(fp, "%d", &num) == 1) {
+        sum += num;
+    }
 
     printf("sum: %d\n", sum);
     fclose(fp);
