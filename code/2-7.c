@@ -18,8 +18,6 @@ void config_parser(Config* config_ptr) {
     fscanf(fp, "%s %d", key, &config_ptr->Options);
     fscanf(fp, "%s %s", key, config_ptr->SectionName);
     fscanf(fp, "%s %llu", key, &config_ptr->Address);
-
-    fclose(fp);
 }
 
 int main(int argc, const char* argv[]) {
