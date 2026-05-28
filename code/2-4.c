@@ -6,7 +6,7 @@ int main(int argc, const char* argv[]) {
 
     FILE* fp = fopen(argv[1], "r");
 
-    if (fp != NULL) {
+   if (fp != NULL) {
         int count[26] = {0};
         int c;
 
@@ -21,7 +21,6 @@ int main(int argc, const char* argv[]) {
                 printf("%c: %d\n", 'a' + i, count[i]);
             }
         }
-    }
 
     fclose(fp);
 }
