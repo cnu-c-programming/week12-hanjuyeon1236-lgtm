@@ -13,10 +13,17 @@ void config_parser(Config* config_ptr) {
     FILE* fp = fopen("config.txt", "r");
     if (fp == NULL) return;
 
-    fscanf(fp, "%*s %s", config_ptr->InputFileName);
-    fscanf(fp, "%*s %d", &config_ptr->Options);
-    fscanf(fp, "%*s %s", config_ptr->SectionName);
-    fscanf(fp, "%*s %llu", &config_ptr->Address);
+   while (fgets(line, sizeof(line), fp)) {
+        if (strncmp(line, "InputFileName=", 14) == 0) {
+            sscanf(line, "InputFileName=%s", config_ptr->InputFileName);
+        } else if (strncmp(line, "Options=", 8) == 0) {
+            sscanf(line, "Options=%d", &config_ptr->Options);
+        } else if (strncmp(line, "SectionName=", 12) == 0) {
+            sscanf(line, "SectionName=%s", config_ptr->SectionName);
+        } else if (strncmp(line, "Address=", 8) == 0) {
+            sscanf(line, "Address=%lli", (long long *)&config_ptr->Address);
+        }
+    }
     
     fclose(fp);
 }
