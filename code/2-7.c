@@ -21,7 +21,7 @@ void config_parser(Config* config_ptr) {
         } else if (strncmp(line, "SectionName=", 12) == 0) {
             sscanf(line, "SectionName=%s", config_ptr->SectionName);
         } else if (strncmp(line, "Address=", 8) == 0) {
-            sscanf(line, "Address=%lli", (long long *)&config_ptr->Address);
+            sscanf(line, "Address=%lli", &config_ptr->Address);
         }
     }
     
