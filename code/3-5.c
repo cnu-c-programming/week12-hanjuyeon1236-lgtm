@@ -15,10 +15,9 @@ int sum = 0;
         if (sscanf(buffer, "%d", &num) == 1) {
             sum += num;
         } else {
-            fprintf(stderr, "%s\n", buffer);
+            fprintf(stderr, "'%s'\n", buffer);
         }
     }
-
     printf("sum: %d\n", sum);
     fclose(fp);
     return 0;
