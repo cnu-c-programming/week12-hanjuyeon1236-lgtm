@@ -4,8 +4,8 @@ int main(int argc, const char* argv[]) {
   if(argc < 2)
     return 0;
 
-  for( ) {
-    const char* filename =
+  for( int i = 1; i < argc; i++) {
+    const char* filename = argv[i];
     char buffer[256] = {0};
 
   FILE* fp = fopen(filename, "r");
